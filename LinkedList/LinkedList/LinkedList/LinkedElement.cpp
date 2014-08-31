@@ -1,24 +1,20 @@
+//LinkedList LinkedElement.cpp
+//Stefan Sanner
+//Implements a one way connected linked list, inherit from this class to get elements which can be stored in LinkedList
+
 #include "LinkedElement.h"
 
-	LinkedElement::LinkedElement(){
+	LinkedElement::LinkedElement()
+	{
 		next=0;
 	}
-	LinkedElement* LinkedElement::getNext(){
+
+	LinkedElement* LinkedElement::getNext()
+	{
 		return this->next;
 	}
-	void LinkedElement::setNext(LinkedElement* newElement){
+	void LinkedElement::setNext(LinkedElement* newElement)
+	{
 		this->next = newElement;
 	}
-	void LinkedElement::append(LinkedElement* newElement){
-		LinkedElement* index = this;
-		
-		while(index->getNext() != 0){
-			index= index->getNext();
-		}
-		index->setNext(newElement);
-	}
-
-	LinkedElement* LinkedElement::prepend(LinkedElement* newElement){
-		newElement->setNext(this);
-		return newElement;
-	}
+	

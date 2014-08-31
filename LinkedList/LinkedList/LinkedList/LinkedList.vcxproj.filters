@@ -21,9 +21,15 @@
     <ClCompile Include="LinkedElement.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="LinkedList.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedElement.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
