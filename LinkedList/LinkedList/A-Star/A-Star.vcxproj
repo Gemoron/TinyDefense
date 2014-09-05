@@ -77,10 +77,14 @@
     <ClCompile Include="LinkedElement.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapElement.cpp" />
+    <ClCompile Include="MapTable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedElement.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="MapElement.h" />
+    <ClInclude Include="MapTable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

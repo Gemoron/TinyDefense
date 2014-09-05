@@ -24,12 +24,24 @@
     <ClCompile Include="LinkedList.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="MapElement.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MapTable.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedElement.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="LinkedList.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MapElement.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MapTable.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

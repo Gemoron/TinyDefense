@@ -7,7 +7,7 @@
 
 class LinkedList
 {
-private:
+protected:
 	LinkedElement* node;
 	int len;
 
@@ -42,4 +42,5 @@ public:
 	void removeFirst	();
 	void removeLast		();
 	void removeIndex	(int index);
+	void removeall	();
 };

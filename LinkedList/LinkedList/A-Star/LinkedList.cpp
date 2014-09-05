@@ -13,10 +13,9 @@
 	}
 
 	//Destructor, destroys all LinkedElements held
-	LinkedList::~LinkedList(){
-		while(node!=0){
-			this->popFirst();
-		}
+	LinkedList::~LinkedList()
+	{
+		removeall();
 	}
 
 	//returns current length
@@ -307,4 +306,12 @@
 			}
 			len--;
 		}
+	}
+	
+	void LinkedList::removeall()
+	{
+		while(node!=0){
+			this->popFirst();
+		}
+		this->calcLength();
 	}
