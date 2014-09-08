@@ -14,13 +14,12 @@ using namespace std;
 		this->name= "";
 		this->previous= 0;
 	}
-	MapElement::MapElement(string newName, int newCurrentCost, int newThisCost, int newGuess)
+	MapElement::MapElement(string newName, int newThisCost, int newGuess)
 	{
 		this->name= newName;
-		this->currentCost = newCurrentCost;
-		this->guess = newGuess;
+		this->currentCost = 0;
 		this->thisCost = newThisCost;
-		this->name= newName;
+		this->guess = newGuess;
 		this->previous= 0;
 	}
 
@@ -34,6 +33,7 @@ using namespace std;
 	void MapElement::setPrevious(MapElement* element)
 	{
 		this->previous = element;
+		this->currentCost = previous->currentCost + previous->thisCost;
 	}
 
 	string MapElement::getName()

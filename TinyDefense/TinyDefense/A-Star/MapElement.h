@@ -20,8 +20,7 @@ private:
 public:
 
 	MapElement();
-	MapElement(string newName, int newCurrentCost, int newThisCost, int newGuess);
-
+	MapElement(string newName, int newThisCost, int newGuess);
 	~MapElement();
 
 	MapElement* getPrevious();

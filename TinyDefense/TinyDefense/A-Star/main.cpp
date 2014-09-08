@@ -27,7 +27,21 @@ void main(void)
 	openList->smartInsertMapElement(new MapElement("9", 3, 1, 5));
 	openList->smartInsertMapElement(new MapElement("10", 9, 1, 5));
 
+	
+	cout<<"OpenList"<<endl;
 	openList->print();
+
+	while(openList->Length() >0 )
+	{
+		closedList->prepend(openList->popFirst());
+	}
+
+	cout<<"OpenList"<<endl;
+	
+	openList->print();
+	
+	cout<<"closedList"<<endl;
+	closedList->print();
 
 	system("pause");
 

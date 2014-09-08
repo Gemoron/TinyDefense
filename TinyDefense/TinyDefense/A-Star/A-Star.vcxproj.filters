@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{aa98e884-a9aa-4016-afde-a06f6089dee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="A-star">
+      <UniqueIdentifier>{542d055d-e40a-40c8-abd9-1cb5faa8a6d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="A-star\header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="A-star\source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LinkedElement.cpp">
+      <Filter>A-star\source</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList.cpp">
+      <Filter>A-star\source</Filter>
+    </ClCompile>
+    <ClCompile Include="MapElement.cpp">
+      <Filter>A-star\source</Filter>
+    </ClCompile>
+    <ClCompile Include="MapTable.cpp">
+      <Filter>A-star\source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="AStar.cpp">
+      <Filter>A-star\source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LinkedElement.h">
+      <Filter>A-star\header</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>A-star\header</Filter>
+    </ClInclude>
+    <ClInclude Include="MapElement.h">
+      <Filter>A-star\header</Filter>
+    </ClInclude>
+    <ClInclude Include="MapTable.h">
+      <Filter>A-star\header</Filter>
+    </ClInclude>
+    <ClInclude Include="AStar.h">
+      <Filter>A-star\header</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
