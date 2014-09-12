@@ -5,3 +5,6 @@ LinkedList/LinkedList/LinkedList.opensdf
 LinkedList/LinkedList/A-Star/Debug/
 TinyDefense/TinyDefense/A-Star/Debug/
 *.ipch
+TinyDefense/TinyDefense/Debug/
+*.suo
+*.user

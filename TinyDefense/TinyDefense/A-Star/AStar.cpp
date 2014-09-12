@@ -13,7 +13,6 @@ using namespace std;
 
 	AStar::AStar()
 	{
-		
 		openList = new MapTable();
 		closedList = new MapTable();
 		MapElement* currentElement =0;
@@ -27,11 +26,14 @@ using namespace std;
 	//returns vector of Gamemap names to get from param start to param end. first pop_end returns start if successful
 	vector<string> AStar::getPath(string start, string end)
 	{
+		vector<string> returner;
 		openList->clearList();
 		closedList->clearList();
 		
 		//get start elenent
-		currentElement = getElementByName(start);
+		getElementByName(start, end);
+		
+		currentElement = (MapElement*) openList->popFirst();
 
 		//put start element in open list
 		openList->prepend(currentElement);
@@ -39,25 +41,27 @@ using namespace std;
 		//untill target element is found or map is empty.
 		while(openList->Length() > 0 && currentElement->getName() != end)
 		{
-			analyzeElement(currentElement->getName());
+			analyzeElement(currentElement->getName(), end);
 			//move element into closed list
 			closedList->prepend(currentElement);
 			//pop first element of open list for next iteration
 			currentElement = (MapElement*) openList->popFirst();
 		}
+		//Make sure last element popped has been added to closedList
+		closedList->prepend(currentElement);
 
-		//construct and return path
-
-		vector<string> returner ;
-
+		//construct path
+		if(currentElement->getName() == end)
+		{
+			returner = assemblePath();
+		}
+		//clear lists to prepare for next run and save memory
 		openList->clearList();
 		closedList->clearList();
 
-		return assemblePath();
+		return returner;
 	}
-
 	
-
 	//assembles the list of map elements
 	vector<string> AStar::assemblePath()
 	{
@@ -75,27 +79,47 @@ using namespace std;
 	//Use to add neighbour elements to A* algorithm, !use in analyzeElement!
 	void AStar::addNeighbourToOpenList(string name,int thisCost, int guess)
 	{
-		//Test if element exists already
-		if(closedList->getIndexByName(name)<0 && openList->getIndexByName(name)<0)
+		//get first element fromclosed list
+		if(closedList->getIndexByName(name)<0)
 		{
+			int openListIndex = openList->getIndexByName(name);
 			//create new Element
 			MapElement* element = new MapElement(name, thisCost,guess);
-			//get previous (and set current cost)
 			element->setPrevious(currentElement);
 
-			openList->smartInsertMapElement(element);
-		}
+			if(openListIndex<0)
+			{
+				openList->smartInsertMapElement(element);
+			}
+			else{
+				MapElement* openListElement =0;
+				openListElement = (MapElement*) openList->getIndex(openListIndex);
+				//if exists, check if if faster/cheaper than existing path
+				if(element->getTotalCost() < openListElement->getTotalCost() )
+				{
+					//if faster, then replace
+					openList->removeIndex(openListIndex);
+					openList->insertAsIndex(element, openListIndex);
+				}
+				else
+				{
+					//if not, forget element and continue
+					delete element;
+				}
+			}
+		}	
 	}
 	
 	//------- Virtual classes need to be implemented by A* user
-	//Please add
-	void AStar::analyzeElement(string element)
-	{}
+	//Please implement: pass all neighbours of the given element to the algorithm using addNeighbourToOpenList(string name, int thisCost, int guess)
+	void AStar::analyzeElement(string element, string end)
+	{
+	
+	}
 
-	// Gets the element wanted by map element and returns a map element initialised by 
-	MapElement* AStar::getElementByName(string name)
-	{}
+	//Please implement: pass the information of the parameter element to the algorithm using addNeighbourToOpenList(string name,int thisCost, int guess)
+	void AStar::getElementByName(string name, string end)
+	{
+	
+	}
 
-	//returns guess of the distance between current object and target
-	int AStar::calcGuess( )
-	{}

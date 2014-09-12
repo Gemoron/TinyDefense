@@ -39,6 +39,9 @@
     <ClCompile Include="AStar.cpp">
       <Filter>A-star\source</Filter>
     </ClCompile>
+    <ClCompile Include="testmap.cpp">
+      <Filter>A-star\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedElement.h">
@@ -54,6 +57,9 @@
       <Filter>A-star\header</Filter>
     </ClInclude>
     <ClInclude Include="AStar.h">
+      <Filter>A-star\header</Filter>
+    </ClInclude>
+    <ClInclude Include="testmap.h">
       <Filter>A-star\header</Filter>
     </ClInclude>
   </ItemGroup>
