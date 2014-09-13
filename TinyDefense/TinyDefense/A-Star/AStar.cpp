@@ -15,7 +15,7 @@ using namespace std;
 	{
 		openList = new MapTable();
 		closedList = new MapTable();
-		MapElement* currentElement =0;
+		this->currentElement =0;
 	}
 	AStar::~AStar()
 	{
@@ -32,23 +32,19 @@ using namespace std;
 		
 		//get start elenent
 		getElementByName(start, end);
-		
-		currentElement = (MapElement*) openList->popFirst();
 
 		//put start element in open list
-		openList->prepend(currentElement);
 
 		//untill target element is found or map is empty.
-		while(openList->Length() > 0 && currentElement->getName() != end)
+		do
 		{
+			//pop first element of open list for next iteration
+			currentElement = (MapElement*) openList->popFirst();
 			analyzeElement(currentElement->getName(), end);
 			//move element into closed list
 			closedList->prepend(currentElement);
-			//pop first element of open list for next iteration
-			currentElement = (MapElement*) openList->popFirst();
 		}
-		//Make sure last element popped has been added to closedList
-		closedList->prepend(currentElement);
+		while((openList->Length() > 0) && (currentElement->getName() != end));
 
 		//construct path
 		if(currentElement->getName() == end)
@@ -112,14 +108,8 @@ using namespace std;
 	
 	//------- Virtual classes need to be implemented by A* user
 	//Please implement: pass all neighbours of the given element to the algorithm using addNeighbourToOpenList(string name, int thisCost, int guess)
-	void AStar::analyzeElement(string element, string end)
-	{
-	
-	}
+	//void AStar::analyzeElement(string element, string end){}
 
 	//Please implement: pass the information of the parameter element to the algorithm using addNeighbourToOpenList(string name,int thisCost, int guess)
-	void AStar::getElementByName(string name, string end)
-	{
-	
-	}
+	//void AStar::getElementByName(string name, string end){}
 

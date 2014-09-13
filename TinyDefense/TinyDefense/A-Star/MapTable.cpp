@@ -26,7 +26,7 @@ using namespace std;
 
 		MapElement* element= (MapElement*) node;
 		//Iterate through the list
-		while(returnIndex !=0 && element!=0)
+		while(returnIndex ==-1 && element!=0)
 		{
 			if(element->getName()== wantedString)
 			{
@@ -34,7 +34,7 @@ using namespace std;
 			}
 			//Next Element
 			index++;
-			element->setNext(element->getNext());
+			element = (MapElement*) element->getNext();
 		}
 		return returnIndex;
 	}

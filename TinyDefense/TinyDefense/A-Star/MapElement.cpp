@@ -33,7 +33,10 @@ using namespace std;
 	void MapElement::setPrevious(MapElement* element)
 	{
 		this->previous = element;
-		this->currentCost = previous->currentCost + previous->thisCost;
+		if(element != 0)
+		{
+			this->currentCost = previous->currentCost + previous->thisCost;
+		}
 	}
 
 	string MapElement::getName()
