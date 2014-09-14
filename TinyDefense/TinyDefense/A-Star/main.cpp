@@ -21,11 +21,8 @@
 ;
 using namespace std;
 
-
-void main(void)
+void astartest()
 {
-	locale::global(locale("German_germany"));
-
 	vector<string> path;
 
 	testmap* map = new testmap();
@@ -41,4 +38,12 @@ void main(void)
 	system("PAUSE");
 
 	delete map;
+}
+
+
+void main(void)
+{
+	locale::global(locale("German_germany"));
+
+	astartest();
 };

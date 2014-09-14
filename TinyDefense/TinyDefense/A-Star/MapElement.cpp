@@ -46,5 +46,5 @@ using namespace std;
 
 	int MapElement::getTotalCost()
 	{
-		return currentCost + guess + thisCost ;
+		return currentCost + thisCost + guess ;
 	}
