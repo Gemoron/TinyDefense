@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "A-Star", "A-Star\A-Star.vcxproj", "{E4EAAB50-3872-4AD0-B734-D6A9D864383E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TinyDefense", "TinyDefense\TinyDefense.vcxproj", "{7FB61300-05D7-4CE0-B861-F17C8A3822DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{E4EAAB50-3872-4AD0-B734-D6A9D864383E}.Debug|Win32.Build.0 = Debug|Win32
 		{E4EAAB50-3872-4AD0-B734-D6A9D864383E}.Release|Win32.ActiveCfg = Release|Win32
 		{E4EAAB50-3872-4AD0-B734-D6A9D864383E}.Release|Win32.Build.0 = Release|Win32
+		{7FB61300-05D7-4CE0-B861-F17C8A3822DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7FB61300-05D7-4CE0-B861-F17C8A3822DF}.Debug|Win32.Build.0 = Debug|Win32
+		{7FB61300-05D7-4CE0-B861-F17C8A3822DF}.Release|Win32.ActiveCfg = Release|Win32
+		{7FB61300-05D7-4CE0-B861-F17C8A3822DF}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
