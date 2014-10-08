@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 #include "MapElement.h"
-#include "MapTable.h"
 ;
 using namespace std;
 
@@ -16,13 +15,16 @@ public:
 	~AStar();
 private:
 
-
-	MapTable* openList;
-	MapTable* closedList;
-	MapElement* currentElement;
+	vector<MapElement> openList;
+	vector<MapElement> closedList;
+	MapElement currentElement;
 //assembles the list of map elements
 	vector<string> assemblePath();
-	
+
+	//checks if name already exists in vector
+	bool isNameInVector(vector<MapElement> Vector, string name);
+	int getIndexByName(vector<MapElement> Vector, string wantedString);
+	void smartInsertMapElement( MapElement newElement);
 
 
 	//returns vector of Gamemap names to get from param start to param end. first pop_end returns start if successful
@@ -36,7 +38,7 @@ protected:
 	//Please implement: pass all neighbours of the given element to the algorithm using addNeighbourToOpenList(string name, int thisCost, int guess)
 	virtual void analyzeElement(string element, string end) = 0;
 
-	//Please 
+	//Please implement: pass the information of the parameter element to the algorithm using addNeighbourToOpenList(string name, 0 , int guess)
 	virtual void getElementByName(string name, string end) = 0;
 
 };

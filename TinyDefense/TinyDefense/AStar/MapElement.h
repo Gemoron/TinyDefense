@@ -3,11 +3,10 @@
 //Element to carry all information nessecary for A-Star
 #pragma once
 
-#include "LinkedELement.h"
 #include <string>
 using namespace std;
 
-class MapElement : public LinkedElement
+class MapElement 
 {
 private:
 
@@ -15,7 +14,7 @@ private:
 	int thisCost;
 	int guess;
 	string name;
-	MapElement* previous;
+	string previous;
 
 public:
 
@@ -23,8 +22,8 @@ public:
 	MapElement(string newName, int newThisCost, int newGuess);
 	~MapElement();
 
-	MapElement* getPrevious();
-	void setPrevious(MapElement* element);
+	string getPrevious();
+	void setPrevious(MapElement element);
 	
 
 	string getName();

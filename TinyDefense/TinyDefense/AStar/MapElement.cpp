@@ -12,7 +12,7 @@ using namespace std;
 		this->guess = 0;
 		this->thisCost = 0;
 		this->name= "";
-		this->previous= 0;
+		this->previous="";
 	}
 	MapElement::MapElement(string newName, int newThisCost, int newGuess)
 	{
@@ -20,23 +20,20 @@ using namespace std;
 		this->currentCost = 0;
 		this->thisCost = newThisCost;
 		this->guess = newGuess;
-		this->previous= 0;
+		this->previous= "";
 	}
 
 	MapElement::~MapElement()
 	{}
 	
-	MapElement* MapElement::getPrevious()
+	string MapElement::getPrevious()
 	{
 		return previous;
 	}
-	void MapElement::setPrevious(MapElement* element)
+	void MapElement::setPrevious(MapElement element)
 	{
-		this->previous = element;
-		if(element != 0)
-		{
-			this->currentCost = previous->currentCost + previous->thisCost;
-		}
+			this->previous = element.getName();
+			this->currentCost = element.currentCost + element.thisCost;
 	}
 
 	string MapElement::getName()

@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E4EAAB50-3872-4AD0-B734-D6A9D864383E}</ProjectGuid>
+    <ProjectGuid>{671DF11F-7ED1-4A33-A2E3-832BFB333969}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>AStar</RootNamespace>
+    <RootNamespace>TinyDefense</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -74,21 +74,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AStar.cpp" />
-    <ClCompile Include="LinkedElement.cpp" />
-    <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="AStar\AStar.cpp" />
+    <ClCompile Include="AStar\MapElement.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MapElement.cpp" />
-    <ClCompile Include="MapTable.cpp" />
-    <ClCompile Include="testmap.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AStar.h" />
-    <ClInclude Include="LinkedElement.h" />
-    <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="MapElement.h" />
-    <ClInclude Include="MapTable.h" />
-    <ClInclude Include="testmap.h" />
+    <ClInclude Include="AStar\AStar.h" />
+    <ClInclude Include="AStar\MapElement.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
